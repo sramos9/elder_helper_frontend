@@ -9,14 +9,22 @@ Elder Helper is a site for volunteers seeking to help elderly with the tasks the
 ## User Stories
 App to help Elderly people with tasks at their home.
 
-Structure:
-Elderly {:id :Name :phone :email :tasks(requested)}
-ledger {:id_elderly, :id_task}
-Task{:id :title :location :duration :required_equipment :details :volunteer}
+Elder:  (stretch: full crud)
+Task: Create, Read, Update, Destroy
+Volunteer: Stretch goal (model)
 
-Volunteer {:id :Name :phone :email :tasks(todo)}
+Structure:
+Elder {:id :Name :phone :email :tasks(requested)}
+
+Task{:id :title, :location, :duration, :details, [:volunteer(s)], :date_needed}
+
+Ledger {:id_elder, :id_task}
+
+
+
 
 ## Future Goals
 
+<!-- Volunteer {:id, :Name, :phone, :email, :task_list[task_id]} -->
 
-## Technology used
+## Technology Used
