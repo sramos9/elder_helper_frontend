@@ -2,7 +2,11 @@
   "name": "elder_helper",
   "version": "1.0.0",
   "description": "Samantha Ramos and Eric Chance",
+<<<<<<< HEAD
   "main": "index.js",
+=======
+  "main": "server.js",
+>>>>>>> 9659e0e780b315d15c804a40603295e06272cc2e
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
