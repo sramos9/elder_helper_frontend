@@ -7,6 +7,9 @@ Elder Helper is a site for volunteers seeking to help elderly with the tasks the
 
 
 ## User Stories
+Frontend flow:
+![ScreenShot](/elder_helper_backend/Flowchart2.jpg)
+
 App to help Elderly people with tasks at their home.
 
 Elder:  (stretch: full crud)
