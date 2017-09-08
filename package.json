@@ -1,0 +1,22 @@
+{
+  "name": "elder_helper",
+  "version": "1.0.0",
+  "description": "Samantha Ramos and Eric Chance",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sramos9/elder_helper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sramos9/elder_helper/issues"
+  },
+  "homepage": "https://github.com/sramos9/elder_helper#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
