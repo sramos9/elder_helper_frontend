@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body ng-controller="rtController as rtCtrl">
-    <header ng-include="'includes/static_nav.html'" id="navvy"></header> <br>
-    <section>
+    <header ng-include="'includes/static_nav.html'"></header> <br>
+    <div id="mid_section">
       <!-- {{rtCtrl.test}} -->
 
       <!-- LANDING PAGE -->
@@ -24,7 +24,7 @@
       <div ng-include="'includes/dynamic_volunteer_allTasks.html'"></div>
       <div ng-include="'includes/dynamic_volunteer_oneTask.html'"></div>
 
-    </section>
+    </div>
     <footer ng-include="'includes/static_footer.html'"></footer>
   </body>
 

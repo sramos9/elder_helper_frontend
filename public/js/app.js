@@ -4,6 +4,13 @@ app.controller('rtController', ['$http', function($http){
   const controller = this;
   this.test="ANGULAR TEST SUCCESSFUL";
   this.pageShowing='includes/dynamic_landing.html';
+  this.theVolunteerTask={};
+  this.VolunteerTaskSelected=function(theTask){
+    //RENDER the following includes/*.html on index.html
+    this.pageShowing='includes/dynamic_volunteer_oneTask.html';
+    console.log("theTask: ",theTask);
+    this.theVolunteerTask=theTask;
+  };
 
   this.gettasks= function(){
     //RENDER the following includes/*.html on index.html

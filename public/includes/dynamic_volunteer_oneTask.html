@@ -1,7 +1,16 @@
 
 <div ng-if="rtCtrl.pageShowing=='includes/dynamic_volunteer_oneTask.html'">
-  Show one volunteer task <br>
-  <input type="text"  placeholder="Name"> <br>
-  <input type="text"  placeholder="Phone"><br>
-  <input type="text"  placeholder="email"><br>
+  <div class="divListItem">
+    <div class="divListItem_header">{{rtCtrl.theVolunteerTask.task_name}}</div>
+    <div>Date Needed: {{rtCtrl.theVolunteerTask.date_needed}}</div>
+    <div>Details: {{rtCtrl.theVolunteerTask.details}}</div>
+    <div>Expected duration: {{rtCtrl.theVolunteerTask.duration}}</div>
+    <div>Zip Code:{{rtCtrl.theVolunteerTask.location}}</div>
+    <div class="divListItem_author">posted by: {{rtCtrl.theVolunteerTask.elder.name}}</div>
+    <div class=""></div><br>
+    Sign up to do this task:<br>
+    <input type="text"  placeholder="Name"><br>
+    <input type="text"  placeholder="Phone"><br>
+    <input type="text"  placeholder="email"><br>
+  </div>
 </div>

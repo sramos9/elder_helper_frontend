@@ -13,10 +13,27 @@
   box-shadow: 10px 10px 7px -8px rgba(0,0,0,0.24);
 }
 .listContainer{
-
   border: 1px solid #999999;
   margin-top: 1em;
+  padding: 2em 3em 3em 3em;
   -webkit-box-shadow: 10px 10px 7px -8px rgba(0,0,0,0.24);
   -moz-box-shadow: 10px 10px 7px -8px rgba(0,0,0,0.24);
   box-shadow: 10px 10px 7px -8px rgba(0,0,0,0.24);
+}
+#nav{
+  width:100%;
+  padding: 1.33em;
+  -webkit-box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.4);
+  -moz-box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.4);
+  box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.4);
+}
+#mid_section{
+  margin: 5em 2em 5em 2em;
+  width:89%;
+  height:80%;
+}
+#footer{
+  width:100%;
+  background-color: #EEEEEE;
+  padding:1em;
 }
