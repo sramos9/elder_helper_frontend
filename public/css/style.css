@@ -1,0 +1,22 @@
+.divListItem_header{
+  font-size: 1.3em;
+}
+.divListItem_author{
+  color: #777777;
+}
+.divListItem{
+  margin-top: 1em;
+  border: 1px solid #CCCCCC;
+  padding:1.33em;
+  -webkit-box-shadow: 10px 10px 7px -8px rgba(0,0,0,0.24);
+  -moz-box-shadow: 10px 10px 7px -8px rgba(0,0,0,0.24);
+  box-shadow: 10px 10px 7px -8px rgba(0,0,0,0.24);
+}
+.listContainer{
+
+  border: 1px solid #999999;
+  margin-top: 1em;
+  -webkit-box-shadow: 10px 10px 7px -8px rgba(0,0,0,0.24);
+  -moz-box-shadow: 10px 10px 7px -8px rgba(0,0,0,0.24);
+  box-shadow: 10px 10px 7px -8px rgba(0,0,0,0.24);
+}

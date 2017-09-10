@@ -1,4 +1,11 @@
-<div ng-if="uctrl.pageShowing=='includes/dynamic_volunteer_allTasks.html'">
+<div ng-if="rtCtrl.pageShowing=='includes/dynamic_volunteer_allTasks.html'">
   Show all tasks here as: <br><br>
-  <a ng-click="uctrl.pageShowing='includes/dynamic_volunteer_oneTask.html'">Title, date requested, Poster</a><br>
+  <div class="listContainer">
+      <div ng-repeat="task in rtCtrl.allTasks track by $index" ng-mouseenter="hoverState = true" ng-mouseleave="hoverState = false" class="divListItem">
+        <div class="divListItem_header">{{task.task_name}}</div>
+        <div>{{task.date_needed}}</div>
+        <div class="divListItem_author">posted by: {{task.elder.name}}</div>
+      </div>
+  </div>
+
 </div>
