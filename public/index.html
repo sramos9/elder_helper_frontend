@@ -8,17 +8,18 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style.css">
   </head>
-  <body>
-    <header ng-include="'includes/nav.html'" id="navvy"></header>
-    <section ng-controller="userController as uctrl">
-      {{uctrl.test}}
+  <body ng-controller="userController as uctrl">
+    <header ng-include="'includes/static_nav.html'" id="navvy"></header> <br>
+    <section>
+      <!-- {{uctrl.test}} -->
+
       <!-- LANDING PAGE -->
       <div ng-include="'includes/dynamic_landing.html'"></div>
       <!-- REQUEST PAGES -->
-      <div ng-include="'includes/dynamic_request_requesterOptions.html'"></div>
-      <div ng-include="'includes/dynamic_request_form.html'"></div>
-      <div ng-include="'includes/dynamic_request_search.html'"></div>
-      <div ng-include="'includes/dynamic_request_ReadOne_UD.html'"></div>
+      <div ng-include="'includes/dynamic_requester.html'"></div>
+      <div ng-include="'includes/dynamic_requester_form.html'"></div>
+      <div ng-include="'includes/dynamic_requester_search.html'"></div>
+      <div ng-include="'includes/dynamic_requester_ReadOne_UD.html'"></div>
       <!-- VOLUNTEER PAGES -->
       <div ng-include="'includes/dynamic_volunteer_allTasks.html'"></div>
       <div ng-include="'includes/dynamic_volunteer_oneTask.html'"></div>
