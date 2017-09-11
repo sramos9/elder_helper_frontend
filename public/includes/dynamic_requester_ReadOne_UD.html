@@ -1,6 +1,6 @@
 <div ng-if="rtCtrl.pageShowing=='includes/dynamic_requester_ReadOne_UD.html'">
   <div class="listContainer">
-    <div ng-if="rtCtrl.ReadOneSubShowing!='update'">
+    <div>
       <div class="divListItem_header">{{rtCtrl.theRequesterTask.task_name}}</div>
       <div>Date Needed: {{rtCtrl.theRequesterTask.date_needed}}</div>
       <div>Details: {{rtCtrl.theRequesterTask.details}}</div>
@@ -10,23 +10,33 @@
     </div>
     <div class=""></div><br><br>
     <!-- NOTE: rtCtrl.ReadOneSubShowing is reintialized in rtCtrl.getTasksByElder -->
-    <a ng-click="rtCtrl.ReadOneSubShowing='delete'" ng-if="rtCtrl.ReadOneSubShowing!='delete'">
-        delete task
-    </a><br><br>
-    <div ng-if="rtCtrl.ReadOneSubShowing=='delete'">
-        Are you sure?<br><br> <a>Yes, delete this entry</a>
-    <div>
-    <a ng-click="rtCtrl.ReadOneSubShowing='update'" ng-if="rtCtrl.ReadOneSubShowing!='update'">
-        update task
-    </a>
-    <div ng-if="rtCtrl.ReadOneSubShowing=='update'">
+    <div ng-if="rtCtrl.ReadOneSubShowing!='delete'">
+      <a ng-click="rtCtrl.ReadOneSubShowing='delete'">
+          delete task
+      </a><br><br>
+    </div>
+    <div ng-if="rtCtrl.ReadOneSubShowing=='delete'" class="listContainer">
+        Are you sure?<br><br> <a>Yes, delete this entry</a><br>
+    </div>
+    <div ng-if="rtCtrl.ReadOneSubShowing!='update'">
+      <a ng-click="rtCtrl.ReadOneSubShowing='update'"><br>
+          update task
+      </a>
+    </div>
+    <div ng-if="rtCtrl.ReadOneSubShowing=='update'" class="listContainer">
       <form class="" action="index.html" method="put">
-        Make a new Request<br>
+        Update Request<br>
+        Title:<br>
         <input type="text"  placeholder="{{rtCtrl.theRequesterTask.task_name}}"><br>
+        <br>Date needed:<br>
         <input type="text"  placeholder="{{rtCtrl.theRequesterTask.date_needed}}"><br>
+        <br>Details:<br>
         <input type="text"  placeholder="{{rtCtrl.theRequesterTask.details}}"><br>
+        <br>Estimated Duration:<br>
         <input type="text"  placeholder="{{rtCtrl.theRequesterTask.duration}}"><br>
+        <br>Location:<br>
         <input type="text"  placeholder="{{rtCtrl.theRequesterTask.location}}"><br>
+        <button type="button" name="button">Submit</button>
       </form>
     </div>
   </div>

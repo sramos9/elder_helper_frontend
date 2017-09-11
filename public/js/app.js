@@ -8,7 +8,6 @@ app.controller('rtController', ['$http', function($http){
   this.theVolunteerTask={};
   this.theRequesterTask={};
 
-
   this.VolunteerTaskSelected=function(theTask){
     //RENDER the following includes/*.html on index.html
     this.pageShowing='includes/dynamic_volunteer_oneTask.html';
