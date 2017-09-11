@@ -54,7 +54,7 @@ app.controller('rtController', ['$http', function($http){
         }
       }
       if(controller.allTasksByElder.length==0){
-        controller.allTasksByElder=["No Results Found"];
+        controller.allTasksByElder=[{id:1,task_name: "No Results Found"}];
       }
       console.log(controller.allTasksByElder);
       //NOTE: ONLY RENDER PAGE AFTER .then() HAS ALL EXECUTED
