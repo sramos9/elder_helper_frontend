@@ -1,0 +1,13 @@
+<div ng-if="rtCtrl.pageShowing=='includes/dynamic_requester_search_results.html'">
+  <div>All tasks by {{rtCtrl.elderName}} users: <br><br>
+    <div class="listContainer">
+        <div ng-repeat="task in rtCtrl.allTasksByElder track by $index" ng-mouseenter="hoverState = true" ng-mouseleave="hoverState = false" class="divListItem">
+          <div ng-click="rtCtrl.RequesterTaskSelected(task)">
+            <div class="divListItem_header">{{task.task_name}}</div>
+            <div>{{task.date_needed}}</div>
+            <div class="divListItem_author">posted by: {{task.elder.name}}</div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
