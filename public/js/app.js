@@ -17,7 +17,7 @@ app.controller('rtController', ['$http', function($http){
     //RENDER the following includes/*.html on index.html
     this.pageShowing='includes/dynamic_requester_ReadOne_UD.html';
     console.log("theTask: ",theTask);
-    this.theVolunteerTask=theTask;
+    this.theRequesterTask=theTask;
   };
 
   this.gettasks= function(){
