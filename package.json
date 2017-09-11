@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sramos9/elder_helper#readme",
   "dependencies": {
+    "body-parser": "^1.18.0",
     "express": "^4.15.4"
   }
 }

@@ -1,0 +1,9 @@
+<div ng-if="rtCtrl.pageShowing=='includes/dynamic_requester_search.html'">
+  <div class="listContainer">
+    show previous tasks for what user?<br><br>
+    <form ng-submit="rtCtrl.getTasksByElder()">
+      <input type="text" ng-model=rtCtrl.elderName placeholder="Name and press submit"><br>
+      <input type="submit" value="Find tasks by creator">
+    </form>
+  </div>
+</div>

@@ -8,7 +8,25 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style.css">
   </head>
-  <body>
-    {{2+2}}
+  <body ng-controller="rtController as rtCtrl">
+    <header ng-include="'includes/static_nav.html'"></header> <br>
+    <div id="mid_section">
+      <!-- {{rtCtrl.test}} -->
+
+      <!-- LANDING PAGE -->
+      <div ng-include="'includes/dynamic_landing.html'"></div>
+      <!-- REQUEST PAGES -->
+      <div ng-include="'includes/dynamic_requester.html'"></div>
+      <div ng-include="'includes/dynamic_requester_form.html'"></div>
+      <div ng-include="'includes/dynamic_requester_search.html'"></div>
+      <div ng-include="'includes/dynamic_requester_search_results.html'"></div>
+      <div ng-include="'includes/dynamic_requester_ReadOne_UD.html'"></div>
+      <!-- VOLUNTEER PAGES -->
+      <div ng-include="'includes/dynamic_volunteer_allTasks.html'"></div>
+      <div ng-include="'includes/dynamic_volunteer_oneTask.html'"></div>
+
+    </div>
+    <footer ng-include="'includes/static_footer.html'"></footer>
   </body>
+
 </html>

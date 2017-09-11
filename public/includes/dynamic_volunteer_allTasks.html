@@ -1,0 +1,13 @@
+<div ng-if="rtCtrl.pageShowing=='includes/dynamic_volunteer_allTasks.html'">
+  <div>All tasks by all users: <br><br>
+    <div class="listContainer">
+        <div ng-repeat="task in rtCtrl.allTasks track by $index" ng-mouseenter="hoverState = true" ng-mouseleave="hoverState = false" class="divListItem">
+          <div ng-click="rtCtrl.VolunteerTaskSelected(task)">
+            <div class="divListItem_header">{{task.task_name}}</div>
+            <div>{{task.date_needed}}</div>
+            <div class="divListItem_author">posted by: {{task.elder.name}}</div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
