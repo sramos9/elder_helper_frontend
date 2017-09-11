@@ -4,8 +4,10 @@ app.controller('rtController', ['$http', function($http){
   const controller = this;
   this.test="ANGULAR TEST SUCCESSFUL";
   this.pageShowing='includes/dynamic_landing.html';
+  this.ReadOneSubShowing="";
   this.theVolunteerTask={};
   this.theRequesterTask={};
+
 
   this.VolunteerTaskSelected=function(theTask){
     //RENDER the following includes/*.html on index.html
@@ -38,8 +40,11 @@ app.controller('rtController', ['$http', function($http){
   };
 
   this.getTasksByElder=function(){
+    //reinitializes so delete and update show correctly
+    //  on single task breakout page
+    this.ReadOneSubShowing="";
 
-    console.log("submitted: ",controller.elderName);
+    // console.log("submitted: ",controller.elderName);
     $http({
       method: 'GET',
       url: 'https://elderhelperappapi.herokuapp.com/tasks'
