@@ -16,7 +16,10 @@
       </a><br><br>
     </div>
     <div ng-if="rtCtrl.ReadOneSubShowing=='delete'" class="listContainer">
-        Are you sure?<br><br> <a>Yes, delete this entry</a><br>
+        Are you sure?<br><br>
+        <form class="" ng-submit="rtCtrl.deleteTask()">
+          <input type="submit" value="Delete this task">
+        </form>
     </div>
     <div ng-if="rtCtrl.ReadOneSubShowing!='update'">
       <a ng-click="rtCtrl.ReadOneSubShowing='update'"><br>
@@ -24,18 +27,18 @@
       </a>
     </div>
     <div ng-if="rtCtrl.ReadOneSubShowing=='update'" class="listContainer">
-      <form class="" action="index.html" method="put">
+      <form class="" ng-submit="">
         Update Request<br>
         Title:<br>
-        <input type="text"  placeholder="{{rtCtrl.theRequesterTask.task_name}}"><br>
+        <input type="text" ng-model="rtCtrl.title" placeholder="{{rtCtrl.theRequesterTask.task_name}}"><br>
         <br>Date needed:<br>
-        <input type="text"  placeholder="{{rtCtrl.theRequesterTask.date_needed}}"><br>
+        <input type="text" ng-model="rtCtrl.date_needed" placeholder="{{rtCtrl.theRequesterTask.date_needed}}"><br>
         <br>Details:<br>
-        <input type="text"  placeholder="{{rtCtrl.theRequesterTask.details}}"><br>
+        <input type="text" ng-model="rtCtrl.details" placeholder="{{rtCtrl.theRequesterTask.details}}"><br>
         <br>Estimated Duration:<br>
-        <input type="text"  placeholder="{{rtCtrl.theRequesterTask.duration}}"><br>
+        <input type="text" ng-model="rtCtrl.duration" placeholder="{{rtCtrl.theRequesterTask.duration}}"><br>
         <br>Location:<br>
-        <input type="text"  placeholder="{{rtCtrl.theRequesterTask.location}}"><br>
+        <input type="text" ng-model="rtCtrl.location" placeholder="{{rtCtrl.theRequesterTask.location}}"><br>
         <button type="button" name="button">Submit</button>
       </form>
     </div>
