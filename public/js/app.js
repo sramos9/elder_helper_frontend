@@ -8,7 +8,6 @@ app.controller('rtController', ['$http', function($http){
   this.theVolunteerTask={};
   this.theRequesterTask={};
 
-
   this.VolunteerTaskSelected=function(theTask){
     //RENDER the following includes/*.html on index.html
     this.pageShowing='includes/dynamic_volunteer_oneTask.html';
@@ -76,8 +75,61 @@ app.controller('rtController', ['$http', function($http){
     // console.log("switched pageShowing");
   };
 
+  this.newRequest = function(){
+    $http({
+      method: 'POST',
+      url: 'https://elderhelperappapi.herokuapp.com/tasks',
+      data: {
+        // task_name: this.title,
+        // date_needed: this.date_needed,
+        // details: this.details,
+        // duration: this.duration,
+        // location: this.location,
+        // elder: {name: this.creator_name},
+        // elder_id:1234567890
+        task_name: "fake task",
+        date_needed: "2017-09-30",
+        location: "90042",
+        duration: "36.5",
+        details: "fake sauce, fake meal",
+        phone: "000.000.0000",
+        email: "fakey@fakefaker.com",
+        elder_id: 2222,
+        // elder [id: 1001, name: "bob", phone:"0", email:"bobs@bob.com"]
+      }
+    }).then(function(response){
+      console.log(response);
 
-}]); //end rtontroller
+      //empties form upon successful new event post
+      task_name= "";
+      date_needed= 0;
+      details= "";
+      duration= 0;
+      location= "";
+      elder.name= "";
+    }, function(error){
+      console.log('error: ',error);
+  });
+}
+
+this.updateTask = function(){
+
+};
+
+this.deleteTask = function(){
+  console.log("delete this? ",this.theRequesterTask);
+    $http({
+      method: 'DELETE',
+      url: 'https://elderhelperappapi.herokuapp.com/tasks/' + this.theRequesterTask.id,
+    }).then(function(response){
+      // console.log(response);
+
+    }, function(error){
+      console.log('error');
+    });
+};
+
+}]); //end rtController
 
 // fetch('http://localhost:3000/locations')
 // .then(response => response.json())

@@ -1,10 +1,14 @@
 <div ng-if="rtCtrl.pageShowing=='includes/dynamic_requester_form.html'">
   <div class="listContainer">
-    <form class="" action="index.html" method="post">
+    <form class="" ng-submit="rtCtrl.newRequest()">
       Make a new Request<br>
-      <input type="text"  placeholder="username"><br>
-      <input type="text"  placeholder="Title"><br>
-      <input type="text"  placeholder="description">
+      <input type="text" ng-model="rtCtrl.title" placeholder="Title"><br>
+      <input type="text" ng-model="rtCtrl.date_needed" placeholder="Date Needed"><br>
+      <input type="text" ng-model="rtCtrl.details" placeholder="Details"><br>
+      <input type="text" ng-model="rtCtrl.duration" placeholder="Estimated duration"><br>
+      <input type="text" ng-model="rtCtrl.location" placeholder="Zip code"><br>
+      <input type="text" ng-model="rtCtrl.creator_name" placeholder="your name"><br>
+      <input type="submit" value="Create New Request">
     </form>
   </div>
 </div>
