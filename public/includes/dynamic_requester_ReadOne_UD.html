@@ -27,7 +27,7 @@
       </a>
     </div>
     <div ng-if="rtCtrl.ReadOneSubShowing=='update'" class="listContainer">
-      <form class="" ng-submit="">
+      <form class="" ng-submit="rtCtrl.updateTask()">
         Update Request<br>
         Title:<br>
         <input type="text" ng-model="rtCtrl.title" placeholder="{{rtCtrl.theRequesterTask.task_name}}"><br>
@@ -39,6 +39,12 @@
         <input type="text" ng-model="rtCtrl.duration" placeholder="{{rtCtrl.theRequesterTask.duration}}"><br>
         <br>Location:<br>
         <input type="text" ng-model="rtCtrl.location" placeholder="{{rtCtrl.theRequesterTask.location}}"><br>
+        <br>Volunteer name:<br>
+        <input type="text" ng-model="rtCtrl.volunteerName" placeholder="{{rtCtrl.theRequesterTask.volunteer_name}}"><br>
+        <br>Volunteer phone:<br>
+        <input type="text" ng-model="rtCtrl.volunteerPhone" placeholder="{{rtCtrl.theRequesterTask.volunteer_phone}}"><br>
+        <br>Volunteer email:<br>
+        <input type="text" ng-model="rtCtrl.volunteerEmail" placeholder="{{rtCtrl.theRequesterTask.volunteer_email}}"><br>
         <button type="button" name="button">Submit</button>
       </form>
     </div>

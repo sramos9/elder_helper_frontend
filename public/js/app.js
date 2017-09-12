@@ -111,7 +111,12 @@ app.controller('rtController', ['$http', function($http){
       console.log('error: ',error);
   });
 }
-this.deleteTask = function(event){
+
+this.updateTask = function(){
+
+};
+
+this.deleteTask = function(){
   console.log("delete this? ",this.theRequesterTask);
     $http({
       method: 'DELETE',
