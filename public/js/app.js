@@ -78,7 +78,7 @@ app.controller('rtController', ['$http', function($http){
   this.newRequest = function(){
     $http({
       method: 'POST',
-      url: 'https://elderhelperappapi.herokuapp.com/tasks',
+      url: 'https://elderhelperappapi.herokuapp.com/elders/2/tasks',
       data: {
         // task_name: this.title,
         // date_needed: this.date_needed,
@@ -87,7 +87,7 @@ app.controller('rtController', ['$http', function($http){
         // location: this.location,
         // elder: {name: this.creator_name},
         // elder_id:1234567890
-        task_name: "fake task",
+        task_name: "fakey 2 task master",
         date_needed: "2017-09-30",
         location: "90042",
         duration: "36.5",
@@ -114,6 +114,19 @@ app.controller('rtController', ['$http', function($http){
 
 this.updateTask = function(){
 
+  $http({
+    method: 'PUT',
+    url:'https://elderhelperappapi.herokuapp.com/tasks/'+this.theRequesterTask.id,
+
+    data:{
+      task_name: "TESTESTEST"
+    }
+
+  }).then(function(response){
+
+  }, function(error){
+    console.log(error);
+  });
 };
 
 this.deleteTask = function(){
