@@ -8,11 +8,16 @@ app.controller('rtController', ['$http', function($http){
   this.theVolunteerTask={};
   this.theRequesterTask={};
   this.isVolunteered=false;
+  this.isReqPosted=false;
   this.loggedIn=false;
   this.displayRegistration=false;
 
   this.isVolunteeredReset=function(){
     this.isVolunteered=false; //reinitialize .isVolunteered
+    this.pageShowing='includes/dynamic_landing.html';
+  }
+  this.isNewReqReset=function(){
+    this.isReqPosted=false; //reinitialize .isReqPosted
     this.pageShowing='includes/dynamic_landing.html';
   }
 
@@ -134,37 +139,41 @@ app.controller('rtController', ['$http', function($http){
   this.newRequest = function(){
     $http({
       method: 'POST',
-      url: 'https://elderhelperappapi.herokuapp.com/elders/2/tasks',
+      url: 'https://elderhelperappapi.herokuapp.com/elders/1/tasks',
       data: {
-        // task_name: this.title,
-        // date_needed: this.date_needed,
-        // details: this.details,
-        // duration: this.duration,
-        // location: this.location,
-        // elder: {name: this.creator_name},
-        // elder_id:1234567890
-        task_name: "fakey 2 task master",
-        date_needed: "2017-09-30",
-        location: "90042",
-        duration: "36.5",
-        details: "fake sauce, fake meal",
-        phone: "000.000.0000",
-        email: "fakey@fakefaker.com",
-        elder_id: 2222,
-        // elder [id: 1001, name: "bob", phone:"0", email:"bobs@bob.com"]
+        task_name: controller.title_req,
+        date_needed: controller.date_needed_req,
+        location: controller.location_req,
+        duration: controller.duration_req,
+        details: controller.details_req,
+        phone: controller.phone_req,
+        email: controller.email_req,
+        elder_id: 1,
       }
     }).then(function(response){
       console.log(response);
-
       //empties form upon successful new event post
       task_name= "";
-      date_needed= 0;
+      date_needed= "";
       details= "";
-      duration= 0;
+      duration= "";
       location= "";
-      elder.name= "";
+      phone="";
+      email="";
+      controller.title_req="";
+      controller.date_needed_req="";
+      controller.location_req="";
+      controller.duration_req="";
+      controller.details_req="";
+      controller.phone_req="";
+      controller.email_req="";
+
+      controller.pageShowing='includes/dynamic_requester_form_afterPOST.html';
+      console.log("Page Showing li.172",controller.pageShowing);
     }, function(error){
       console.log('error: ',error);
+      controller.pageShowing='includes/dynamic_requester_form_afterPOST.html';
+      console.log("Page Showing li.176",controller.pageShowing);
   });
 }
 
