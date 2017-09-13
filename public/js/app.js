@@ -8,6 +8,51 @@ app.controller('rtController', ['$http', function($http){
   this.theVolunteerTask={};
   this.theRequesterTask={};
 
+  // this is for jwt testing and function
+  this.url = 'http://localhost:3000';
+  this.elder = {};
+  this.elders = [];
+  this.elderPass = {};
+
+  this.login = function(elderPass) {
+    console.log(elderPass);
+    $http({
+      method: 'POST',
+      url: this.url + '/elders/login',
+      data: { elder: { username: elderPass.username, password: elderPass.password }},
+    }).then(function(response) {
+      console.log(response);
+      this.elder = response.data.elder;
+      localStorage.setItem('token', JSON.stringify(response.data.token));
+      console.log(localStorage.token, " This is the token or at least it should be");
+    }.bind(this));
+  }
+
+  this.getElders = function() {
+    $http({
+      url: this.url + '/elders',
+      method: 'GET',
+      headers: {
+        Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('token'))
+      }
+    }).then(function(response) {
+      console.log(response);
+      if (response.data.status == 401) {
+          this.error = "Unauthorized";
+      } else {
+        this.elders = response.data;
+      }
+    }.bind(this));
+  }
+
+  this.logout = function() {
+    localStorage.clear('token');
+    location.reload();
+  }
+
+
+
+
   this.VolunteerTaskSelected=function(theTask){
     //RENDER the following includes/*.html on index.html
     this.pageShowing='includes/dynamic_volunteer_oneTask.html';
