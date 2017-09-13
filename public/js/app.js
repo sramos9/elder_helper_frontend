@@ -22,10 +22,13 @@ app.controller('rtController', ['$http', function($http){
       data: { elder: { username: elderPass.username, password: elderPass.password }},
     }).then(function(response) {
       console.log(response);
+      this.loggedIn = true;
       this.elder = response.data.elder;
       localStorage.setItem('token', JSON.stringify(response.data.token));
       console.log(localStorage.token, " This is the token or at least it should be");
+      this.getElders();
     }.bind(this));
+
   }
 
   this.getElders = function() {
