@@ -166,7 +166,7 @@ app.controller('rtController', ['$http', function($http){
   this.newRequest = function(){
     $http({
       method: 'POST',
-      url: 'https://elderhelperappapi.herokuapp.com/elders/'+controller.loggedInElderID+'/tasks',
+      url: 'http://elderhelperappapi.herokuapp.com/elders/'+controller.loggedInElderID+'/tasks',
       data: {
         task_name: controller.title_req,
         date_needed: controller.date_needed_req,
