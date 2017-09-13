@@ -176,6 +176,9 @@ app.controller('rtController', ['$http', function($http){
         phone: controller.phone_req,
         email: controller.email_req,
         elder_id: controller.loggedInElderID,
+        elder:{
+          id:controller.loggedInElderID
+        }
       }
     }).then(function(response){
       console.log(response);
