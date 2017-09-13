@@ -6,9 +6,11 @@
       Register
     </a>
     <div ng-if="rtCtrl.displayRegistration==true">
-      <form ng-submit="">
-        <input type="text" ng-model="elderPass.username" placeholder="username"/>
-        <input type="password" ng-model="elderPass.password" placeholder="password"/>
+      <form ng-submit="rtCtrl.registration(userReg)">
+        <input type="text" ng-model="rtCtrl.elderName" placeholder="name"/>
+        <input type="text" ng-model="rtCtrl.elderEmail" placeholder="email"/>
+        <input type="text" ng-model="userReg.username" placeholder="username"/>
+        <input type="password" ng-model="userReg.password" placeholder="password"/>
         <input type="submit"/>
       </form>
     </div>
@@ -28,7 +30,7 @@
       </form>
     </div>
     <div ng-if="rtCtrl.loggedIn==true">
-      Logged in as: {{rtCtrl.elder.username}} &emsp;&emsp;<a ng-click="rtCtrl.logout()">Log Out</a>
+      Logged in &emsp;&emsp;<a ng-click="rtCtrl.logout()">Log Out</a>
     </div>
   <div>
     <!-- log out  -->

@@ -21,12 +21,36 @@ app.controller('rtController', ['$http', function($http){
     this.pageShowing='includes/dynamic_landing.html';
   }
 
-  // this is for jwt testing and function
+  this.userReg={};
   var self = this;
+
+  this.registration=function(userReg){
+    $http({
+      method: 'POST',
+      url: 'http://elderhelperappapi.herokuapp.com/elders',
+      data:{
+        elder:{
+          name:controller.elderName,
+          email:controller.elderEmail,
+          username:userReg.username,
+          password:userReg.password
+        }
+      }
+    }).then(function(response){
+      console.log("HOLY GHOST, YOU HAZ ACCT!! =^_~=m");
+      console.log(response.data);
+      controller.loggedIn=true;
+      self.elder=userReg.username;
+    }), function(error){console.log("ERROR: ",error); }
+  };
+
+  // this is for jwt testing and function
+
   this.url = 'https://elderhelperappapi.herokuapp.com/';
   this.elder = {};
   this.elders = [];
   this.elderPass = {};
+  this.loggedInElderID=0;
 
   this.login = function(elderPass) {
     console.log(elderPass);
@@ -38,12 +62,13 @@ app.controller('rtController', ['$http', function($http){
       console.log(response);
       this.loggedIn = true;
       self.elder = response.data.elder;
+      this.loggedInElderID=response.data.elder.id;
+      console.log("this.loggedInElderID: ",this.loggedInElderID);
       console.log(self.elder);
       localStorage.setItem('token', JSON.stringify(response.data.token));
       console.log(localStorage.token, " This is the token or at least it should be");
       this.getElders();
     }.bind(this));
-
   }
 
   this.getElders = function() {
@@ -141,7 +166,7 @@ app.controller('rtController', ['$http', function($http){
   this.newRequest = function(){
     $http({
       method: 'POST',
-      url: 'https://elderhelperappapi.herokuapp.com/elders/1/tasks',
+      url: 'https://elderhelperappapi.herokuapp.com/elders/'+controller.loggedInElderID+'/tasks',
       data: {
         task_name: controller.title_req,
         date_needed: controller.date_needed_req,
@@ -150,7 +175,7 @@ app.controller('rtController', ['$http', function($http){
         details: controller.details_req,
         phone: controller.phone_req,
         email: controller.email_req,
-        elder_id: 1,
+        elder_id: controller.loggedInElderID,
       }
     }).then(function(response){
       console.log(response);
