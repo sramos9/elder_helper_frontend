@@ -1,0 +1,12 @@
+
+<div ng-if="rtCtrl.pageShowing=='includes/dynamic_requester_form_afterPOST.html'">
+  <div class="divListItem">
+    <div class="divListItem_header" ng-if="rtCtrl.isReqPosted==true">
+      SUCCESS! <br> You have successfully posted your new request!<br>
+    </div>
+    <div class="divListItem_header" ng-if="!rtCtrl.isReqPosted">
+      ERROR: Could not post new request. Please inform the site administrator.
+    </div><br><br>
+      <button type="button" ng-click="rtCtrl.isNewReqReset()" name="OK">OK</button>
+  </div>
+</div>

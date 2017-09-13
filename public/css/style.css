@@ -12,6 +12,11 @@
   -moz-box-shadow: 10px 10px 7px -8px rgba(0,0,0,0.24);
   box-shadow: 10px 10px 7px -8px rgba(0,0,0,0.24);
 }
+.loginContainer_small{
+  border: 1px solid #DDDDDD;
+  padding: .3em;
+  background-color: #F9F9F9;
+}
 .listContainer{
   border: 1px solid #999999;
   margin-top: 1em;
@@ -26,7 +31,12 @@
   -webkit-box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.4);
   -moz-box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.4);
   box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.4);
-}
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+12,ffffff+23,ebf4f4+55,f7f8ff+86,f7f8ff+86 */
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ffffff 12%, #ffffff 23%, #ebf4f4 55%, #f7f8ff 86%, #f7f8ff 86%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ffffff 12%,#ffffff 23%,#ebf4f4 55%,#f7f8ff 86%,#f7f8ff 86%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ffffff 12%,#ffffff 23%,#ebf4f4 55%,#f7f8ff 86%,#f7f8ff 86%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f7f8ff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */}
 #mid_section{
   margin: 5em 2em 5em 2em;
   width:89%;

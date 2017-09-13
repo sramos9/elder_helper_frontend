@@ -2,12 +2,14 @@
   <div class="listContainer">
     <form class="" ng-submit="rtCtrl.newRequest()">
       Make a new Request<br>
-      <input type="text" ng-model="rtCtrl.title" placeholder="Title"><br>
-      <input type="text" ng-model="rtCtrl.date_needed" placeholder="Date Needed"><br>
-      <input type="text" ng-model="rtCtrl.details" placeholder="Details"><br>
-      <input type="text" ng-model="rtCtrl.duration" placeholder="Estimated duration"><br>
-      <input type="text" ng-model="rtCtrl.location" placeholder="Zip code"><br>
-      <input type="text" ng-model="rtCtrl.creator_name" placeholder="your name"><br>
+      <input type="text" ng-model="rtCtrl.title_req" placeholder="Title"><br>
+      <input type="text" ng-model="rtCtrl.date_needed_req" placeholder="Date Needed"><br>
+      <input type="text" ng-model="rtCtrl.details_req" placeholder="Details"><br>
+      <input type="text" ng-model="rtCtrl.duration_req" placeholder="Estimated duration"><br>
+      <input type="text" ng-model="rtCtrl.location_req" placeholder="Zip code"><br>
+      <input type="text" ng-model="rtCtrl.creator_name_req" placeholder="your name"><br>
+      <input type="text" ng-model="rtCtrl.phone_req" placeholder="your phone number (will be displayed to the public)"><br>
+      <input type="text" ng-model="rtCtrl.email_req" placeholder="your email (will be displayed to the public)"><br>
       <input type="submit" value="Create New Request">
     </form>
   </div>
