@@ -8,6 +8,8 @@ app.controller('rtController', ['$http', function($http){
   this.theVolunteerTask={};
   this.theRequesterTask={};
   this.isVolunteered=false;
+  this.loggedIn=false;
+  this.displayRegistration=false;
 
   this.isVolunteeredReset=function(){
     this.isVolunteered=false; //reinitialize .isVolunteered

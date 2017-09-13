@@ -1,18 +1,37 @@
-<div id="nav">
+<div id="nav" id="nav">
 
-  <a ng-click="rtCtrl.pageShowing='includes/dynamic_landing.html'">ElderHelper</a>&emsp;
+  <a ng-click="rtCtrl.pageShowing='includes/dynamic_landing.html'">ElderHelper</a><br><br>
+  <div ng-if="rtCtrl.loggedIn==false">
+    <a ng-click="rtCtrl.displayRegistration=!rtCtrl.displayRegistration">
+      Register
+    </a>
+    <div ng-if="rtCtrl.displayRegistration==true">
+      <form ng-submit="">
+        <input type="text" ng-model="elderPass.username" placeholder="username"/>
+        <input type="password" ng-model="elderPass.password" placeholder="password"/>
+        <input type="submit"/>
+      </form>
+    </div>
+  </div>
+  <br><br>
 
   <!--Begin login form for jwt -->
 
-  
 
-  <form ng-submit="rtCtrl.login(elderPass)">
-      <input type="text" ng-model="elderPass.username" placeholder="username"/>
-      <input type="password" ng-model="elderPass.password" placeholder="password"/>
-      <input type="submit"/>
-    </form>
-    <p>Logged in as: {{rtCtrl.elder.username}}</p>
+  <div>
+    <div ng-if="rtCtrl.loggedIn==false" class="loginContainer_small">
+      <form ng-submit="rtCtrl.login(elderPass)">
+        Login:
+        <input type="text" ng-model="elderPass.username" placeholder="username"/>
+        <input type="password" ng-model="elderPass.password" placeholder="password"/>
+        <input type="submit"/>
+      </form>
+    </div>
+    <div ng-if="rtCtrl.loggedIn==true">
+      Logged in as: {{rtCtrl.elder.username}} &emsp;&emsp;<a ng-click="rtCtrl.logout()">Log Out</a>
+    </div>
+  <div>
     <!-- log out  -->
-    <a href="#" ng-click="rtCtrl.logout()">Log Out</a>
+
 
 </div>
