@@ -9,7 +9,7 @@ app.controller('rtController', ['$http', function($http){
   this.theRequesterTask={};
 
   // this is for jwt testing and function
-  this.url = 'http://localhost:3000';
+  this.url = 'https://elderhelperappapi.herokuapp.com';
   this.elder = {};
   this.elders = [];
   this.elderPass = {};
