@@ -58,4 +58,5 @@ Separate volunteer model and login. <!-- Volunteer {:id, :Name, :phone, :email, 
 - ruby / rails / postgresql
 - jwt authentication
 - postman
+- heroku
 - node / express / javascript / body-parser / json / angular / html / css
