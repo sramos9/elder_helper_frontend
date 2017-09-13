@@ -1,0 +1,14 @@
+
+<div ng-if="rtCtrl.pageShowing=='includes/dynamic_volunteer_oneTask_afterPUT.html'">
+  <div class="divListItem">
+    <div class="divListItem_header" ng-if="rtCtrl.isVolunteered==true">
+      SUCCESS! <br> You have volunteered for {{rtCtrl.theVolunteerTask.task_name}}
+      on {{rtCtrl.theVolunteerTask.date_needed}}.<br>
+      To reschedule or for more info, please email {{rtCtrl.theVolunteerTask.elder.email}}
+    </div>
+    <div class="divListItem_header" ng-if="!rtCtrl.isVolunteered">
+      ERROR: Could not join task. Please inform the site administrator.
+    </div><br><br>
+      <button type="button" ng-click="rtCtrl.isVolunteeredReset()" name="OK">OK</button>
+  </div>
+</div>
