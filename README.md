@@ -41,7 +41,7 @@ On the volunteer path through the site, the user sees all tasks displayed (using
 As a requester, the user may publish a new task to the task list.  This uses a Create method.  They may also choose to enter in a user's name and then see all posted tasks by that user.  It is here that they may Update (PUT) or Destroy (DELETE) tasks.
 
 ##Struggles
-Authentication, many aspects of the process broke our code.  Sometimes it would seem fixed, only to be broken again minutes later.  We had a heroku fail and our database stopped working at some point, and had to get time with a teacher to troubleshoot the broken backend on heroku and get it working again.
+Authentication, many aspects of the process broke our code.  Sometimes it would seem fixed, only to be broken again minutes later.  We had a heroku fail and our database stopped working at some point, and had to get time with a teacher to troubleshoot the broken backend on heroku and get it working again.  We also had a git issue with one of our repos, and had to ditch it in favor of a newer one.
 
 ## Future Goals
 -show which tasks have volunteers already, and make the number of volunteers a choice that is picked by the elder/creator.
