@@ -9,9 +9,11 @@
     <div class="divListItem_author">posted by: {{rtCtrl.theVolunteerTask.elder.name}}</div>
     <div class=""></div><br>
     Sign up to do this task:<br>
-    <input type="text" ng-model="rtCtrl.volunteer_name" placeholder="Name"><br>
-    <input type="text" ng-model="rtCtrl.volunteer_phone" placeholder="Phone"><br>
-    <input type="text" ng-model="rtCtrl.volunteer_email" placeholder="email"><br>
-    <button type="button" name="button">Submit</button>
+    <form class="" ng-submit="rtCtrl.updateTask_volunteer()">
+      <input type="text" ng-model="rtCtrl.volunteer_name" placeholder="Volunteer Info"><br>
+      <!-- <input type="text" ng-model="rtCtrl.volunteer_phone" placeholder="Phone"><br>
+      <input type="text" ng-model="rtCtrl.volunteer_email" placeholder="email"><br> -->
+      <input type="submit" value="Sign Up">
+    </form>
   </div>
 </div>
