@@ -47,3 +47,31 @@
   background-color: #EEEEEE;
   padding:1em;
 }
+
+body {
+  background: Aliceblue;
+  font-family: 'Catamaran', sans-serif;
+
+}
+
+.home {
+  font-size: 35px;
+  font-weight: bold;
+  color: Midnightblue;
+  /*font-family: 'Oxygen Mono', monospace;*/
+  font-family: 'Arvo', serif;
+
+}
+
+.reg{
+  font-size: 24px;
+  /*font-family: 'Arbutus Slab', serif;*/
+}
+
+.listContainer {
+  background-color: WhiteSmoke;
+}
+
+/*.reqvol {
+  flex: auto;
+}*/
