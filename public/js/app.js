@@ -113,17 +113,46 @@ app.controller('rtController', ['$http', function($http){
 }
 
 this.updateTask = function(){
-
+  console.log("task_name",controller.title); console.log("this.details",this.details);
   $http({
     method: 'PUT',
-    url:'https://elderhelperappapi.herokuapp.com/tasks/'+this.theRequesterTask.id,
+    url:'https://elderhelperappapi.herokuapp.com/elders/'+this.theRequesterTask.elder_id+'/tasks/'+this.theRequesterTask.id,
 
     data:{
-      task_name: "TESTESTEST"
+      task_name: this.title
     }
 
   }).then(function(response){
 
+  }, function(error){
+    console.log(error);
+  });
+};
+this.updateTask_volunteer = function(){
+  console.log("updateTask_volunteer submitting");
+  console.log("theVolunteerTask.elder_id: ",this.theVolunteerTask.elder_id);
+  console.log(".volunteer_name: ", this.volunteer_name);
+  console.log(".volunteer_email: ", this.volunteer_email);
+  console.log(".volunteer_phone: ", this.volunteer_phone);
+  console.log('https://elderhelperappapi.herokuapp.com/elders/'+this.theVolunteerTask.elder_id+'/tasks/'+this.theVolunteerTask.id);
+  // this.theVolunteerTask.volunteer_email=this.volunteer_email;
+  // this.theVolunteerTask.volunteer_name=this.volunteer_name;
+  // this.theVolunteerTask.volunteer_phone=this.volunteer_phone;
+  // console.log("this.theVolunteerTask: '\n'",this.theVolunteerTask);
+  $http({
+    method: 'PUT',
+    url:'https://elderhelperappapi.herokuapp.com/elders/'+this.theVolunteerTask.elder_id+'/tasks/'+this.theVolunteerTask.id,
+
+    data:{
+      // elder_id:this.theVolunteerTask.elder_id,
+      // id:this.theVolunteerTask.id,
+      // volunteer_email:this.volunteer_name,
+      volunteer_name:this.volunteer_email,
+      // volunteer_phone:this.volunteer_phone
+    }
+
+  }).then(function(response){
+    console.log("RESPONSE: ",response);
   }, function(error){
     console.log(error);
   });
