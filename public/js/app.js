@@ -15,7 +15,8 @@ app.controller('rtController', ['$http', function($http){
   }
 
   // this is for jwt testing and function
-  this.url = 'https://elderhelperappapi.herokuapp.com';
+  var self = this;
+  this.url = 'http://localhost:3000';
   this.elder = {};
   this.elders = [];
   this.elderPass = {};
@@ -29,7 +30,8 @@ app.controller('rtController', ['$http', function($http){
     }).then(function(response) {
       console.log(response);
       this.loggedIn = true;
-      this.elder = response.data.elder;
+      self.elder = response.data.elder;
+      console.log(self.elder);
       localStorage.setItem('token', JSON.stringify(response.data.token));
       console.log(localStorage.token, " This is the token or at least it should be");
       this.getElders();
