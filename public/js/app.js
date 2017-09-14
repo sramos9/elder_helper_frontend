@@ -13,13 +13,13 @@ app.controller('rtController', ['$http', function($http){
   this.displayRegistration=false;
 
   this.isVolunteeredReset=function(){
+    this.pageShowing='includes/dynamic_landing.html';
     this.isVolunteered=false; //reinitialize .isVolunteered
-    this.pageShowing='includes/dynamic_landing.html';
-  }
+  };
   this.isNewReqReset=function(){
-    this.isReqPosted=false; //reinitialize .isReqPosted
     this.pageShowing='includes/dynamic_landing.html';
-  }
+    this.isReqPosted=false; //reinitialize .isReqPosted
+  };
 
   this.userReg={};
   var self = this;
@@ -198,10 +198,12 @@ app.controller('rtController', ['$http', function($http){
       controller.phone_req="";
       controller.email_req="";
 
+      isReqPosted=true;
       controller.pageShowing='includes/dynamic_requester_form_afterPOST.html';
       console.log("Page Showing li.172",controller.pageShowing);
     }, function(error){
       console.log('error: ',error);
+      isReqPosted=false;
       controller.pageShowing='includes/dynamic_requester_form_afterPOST.html';
       console.log("Page Showing li.176",controller.pageShowing);
   });
